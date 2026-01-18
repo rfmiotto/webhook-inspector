@@ -2,12 +2,10 @@
   "name": "webhook_inspector",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
   "packageManager": "pnpm@10.28.0"
 }

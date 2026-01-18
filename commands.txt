@@ -1,1 +1,19 @@
+# Here we will create a mono-repo that will have both the backend API and the frontend in React.
+# The mono-repo idea is interesting because it shares common dependencies and allow front and backend to share types and some common definitions.
+
 pnpm init   # this creates a package.json
+
+pnpm create vite@latest web  # the name of the project is 'web'
+
+# in this command select the options:
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  TypeScript
+│
+◇  Use rolldown-vite (Experimental)?:
+│  No
+│
+◇  Install with pnpm and start now?
+│  Yes
