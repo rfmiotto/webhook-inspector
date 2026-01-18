@@ -51,3 +51,9 @@ https://github.com/tsconfig/bases
 "paths": {
   "@/*": ["./src/*"]
 }
+
+
+# Now, setup Biome, a library to format out code (like prettier)
+pnpm add -D -E @biomejs/biome
+
+pnpm exec biome init
