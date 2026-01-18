@@ -23,3 +23,31 @@ pnpm create vite@latest web  # the name of the project is 'web'
 # Then, go to 'web' folder and run:
 pnpm i
 # so that we update the dependencies we we manually changed in the package.json
+
+
+
+# Now, we'll focus on the backend
+# Create a folder api/ and inside it run:
+pnpm init
+
+# We'll create this backend from scratch (manually). Here we'll use tsx because it has some nice features
+# that the typescript support from ndoe does not include yet, such as aliases for relative imports with @ symbol.
+pnpm i typescript @types/node tsx -D
+
+# Now we create a config for typescript:
+pnpm tsc --init
+
+# Check out the version of node we have installed
+node --version
+
+# Then go to this webside
+https://github.com/tsconfig/bases
+
+# and choose the corresponding node version you got. You can either install the package, or
+# you can just copy the content of your created tsconfig.json with theirs.
+
+# The only thing we are going to include in this tsconfig.json is to add an alias to make
+# our imports simpler. Inside the compilerOptions add the following:
+"paths": {
+  "@/*": ["./src/*"]
+}
