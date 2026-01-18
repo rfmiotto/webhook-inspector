@@ -17,3 +17,9 @@ pnpm create vite@latest web  # the name of the project is 'web'
 │
 ◇  Install with pnpm and start now?
 │  Yes
+
+
+# After this initial setup, I cleaned the 'web' project, removing some stuff we're not going to use.
+# Then, go to 'web' folder and run:
+pnpm i
+# so that we update the dependencies we we manually changed in the package.json
