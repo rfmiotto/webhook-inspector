@@ -57,3 +57,16 @@ https://github.com/tsconfig/bases
 pnpm add -D -E @biomejs/biome
 
 pnpm exec biome init
+
+# I added some custom configurations to biome.json and also included a script on package.json to run biome format
+
+
+# Now, let's work on the routes. For this, we need to install a few libs:
+
+pnpm i @fastify/cors @fastify/swagger zod fastify-type-provider-zod @scalar/fastify-api-reference
+
+- cors is used for
+- swagger will automatically generate a documentation for our API
+- zod will validatate the requests
+- fastify-type-provider-zod allows a serialization of every route, i.e. the route is called only if the user pass the data in the exact format it is expected. It also brings type inference.
+- scalar is a nice open-source UI that can be used along with swagger, but it creates a better visualization.
