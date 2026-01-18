@@ -8,6 +8,7 @@ import {
 	validatorCompiler,
 	type ZodTypeProvider,
 } from "fastify-type-provider-zod";
+import { env } from "./env";
 import { listWebhooks } from "./routes/list-webhooks";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
@@ -40,7 +41,7 @@ app.register(listWebhooks);
 
 app
 	.listen({
-		port: 3333,
+		port: env.PORT,
 		host: "0.0.0.0", // this allow us to host the app in Railway
 	})
 	.then(() => {
