@@ -70,3 +70,24 @@ pnpm i @fastify/cors @fastify/swagger zod fastify-type-provider-zod @scalar/fast
 - zod will validatate the requests
 - fastify-type-provider-zod allows a serialization of every route, i.e. the route is called only if the user pass the data in the exact format it is expected. It also brings type inference.
 - scalar is a nice open-source UI that can be used along with swagger, but it creates a better visualization.
+
+
+# Now, we create a simple connection to a Postgres database.
+# I'll not use volumes in the docker-compose file to make it easier to clean the database (do not persist after reinit)
+
+docker compose up -D
+
+# To access the DB, we will use Drizzle, which is an ORM (like Prisma, TypeORM, Hibernate, Eloquent, etc),
+# but it's syntax is very close to the traditional SQL. So we can still use a 'pure' SQL syntax while also
+# having nice features such as migrations, type inference, and schema manegement. So, let's install the dependencies
+
+pnpm i drizzle-kit -D
+pnpm i drizzle-orm drizzle-zod pg
+pnpm i @types/pg -D
+
+# Just a note about the schema for the webhook table: we are using UUID for the id field. However, in this application, we
+# want to have an infinite scroll feature which shows the webhooks sorted by timestamp. OK, so what? The thing is that
+# the UUID that comes by default with node (v4) or the one that comes with Postgres are not time sortable.
+# Here, we want to use the UUID v7 because we can time sort the registers (data) in our database based on its creation.
+
+pnpm i uuidv7
