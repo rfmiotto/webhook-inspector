@@ -91,3 +91,9 @@ pnpm i @types/pg -D
 # Here, we want to use the UUID v7 because we can time sort the registers (data) in our database based on its creation.
 
 pnpm i uuidv7
+
+# To make sure the connection with the DB is working, we created a few scripts in package.json. Now, we run them as:
+
+pnpm run db:generate  # read schemas and generate the SQL to create the tables or modify them
+pnpm run db:migrate  # run the migrations (create or modify tables)
+pnpm run db:studio  # a drizzle feature that creates an URL to visualize the DB
