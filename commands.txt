@@ -113,3 +113,8 @@ pnpm add -D @tanstack/router-plugin
 We'll also use Tailwind CSS
 
 pnpm i tailwindcss @tailwindcss/vite
+
+Let's also install BiomeJS to fix some linting issues.
+
+pnpm add -D -E @biomejs/biome
+pnpm exec biome init
