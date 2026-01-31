@@ -102,19 +102,39 @@ pnpm run db:studio  # a drizzle feature that creates an URL to visualize the DB
 ----------------------
 
 
-Now let's focus on the frontend (web application).
+# Now let's focus on the frontend (web application).
 
-We'll use Tanstack Router which serves as a router for the front end, like a ReactRouterDOM. However, Tanstack Router
-is bringing in a few more nice features, so that is why will'll choose it.
+# We'll use Tanstack Router which serves as a router for the front end, like a ReactRouterDOM. However, Tanstack Router
+# is bringing in a few more nice features, so that is why will'll choose it.
 
 pnpm add @tanstack/react-router @tanstack/react-router-devtools
 pnpm add -D @tanstack/router-plugin
 
-We'll also use Tailwind CSS
+# We'll also use Tailwind CSS
 
 pnpm i tailwindcss @tailwindcss/vite
 
-Let's also install BiomeJS to fix some linting issues.
+# Let's also install BiomeJS to fix some linting issues.
 
 pnpm add -D -E @biomejs/biome
 pnpm exec biome init
+
+
+# Let's install the following library:
+pnpm i react-resizable-panels
+
+# it allow us to create panels (like sidebars) whose size can easily be changed.
+
+# To create variants of our UI components, we'll use
+pnpm i tailwind-variants
+pnpm i tailwind-merge
+
+# For icons:
+pnpm i lucide-react
+
+# Some components (like the checkbox) are usually not stylized very often. Every browser has
+# its own style. For these cases, it comes in handy to use Radix-UI. It brings us many
+# primitive components (that do not carry style, only behavior/functionality) that immitate
+# the native HTML component. Here, we will only install the component we are going to use:
+
+pnpm i @radix-ui/react-checkbox
