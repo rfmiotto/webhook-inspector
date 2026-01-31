@@ -97,3 +97,19 @@ pnpm i uuidv7
 pnpm run db:generate  # read schemas and generate the SQL to create the tables or modify them
 pnpm run db:migrate  # run the migrations (create or modify tables)
 pnpm run db:studio  # a drizzle feature that creates an URL to visualize the DB
+
+
+----------------------
+
+
+Now let's focus on the frontend (web application).
+
+We'll use Tanstack Router which serves as a router for the front end, like a ReactRouterDOM. However, Tanstack Router
+is bringing in a few more nice features, so that is why will'll choose it.
+
+pnpm add @tanstack/react-router @tanstack/react-router-devtools
+pnpm add -D @tanstack/router-plugin
+
+We'll also use Tailwind CSS
+
+pnpm i tailwindcss @tailwindcss/vite
