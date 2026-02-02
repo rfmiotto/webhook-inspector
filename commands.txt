@@ -138,3 +138,9 @@ pnpm i lucide-react
 # the native HTML component. Here, we will only install the component we are going to use:
 
 pnpm i @radix-ui/react-checkbox
+
+
+# We are also going to use a library called shiki to render code block in our application.
+# Shiki is really fast and it works with server-side rendering!
+
+pnpm i shiki
